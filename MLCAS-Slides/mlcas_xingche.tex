@@ -1,0 +1,560 @@
+\documentclass{beamer}
+
+\mode<presentation> {
+%\usetheme{AnnArbor}
+%\usetheme{Antibes}
+%\usetheme{Bergen}
+%\usetheme{Berkeley}
+%\usetheme{Berlin}
+%\usetheme{Boadilla}
+%\usetheme{CambridgeUS}
+%\usetheme{Copenhagen}
+%\usetheme{Darmstadt}
+%\usetheme{Dresden}
+%\usetheme{Frankfurt}
+%\usetheme{Goettingen}
+%\usetheme{Hannover}
+%\usetheme{Ilmenau}
+%\usetheme{JuanLesPins}
+%\usetheme{Luebeck}
+\usetheme{Madrid}
+%\usetheme{Malmoe}
+%\usetheme{Marburg}
+%\usetheme{Montpellier}
+%\usetheme{PaloAlto}
+%\usetheme{Pittsburgh}
+%\usetheme{Rochester}
+%\usetheme{Singapore}
+%\usetheme{Szeged}
+%\usetheme{Warsaw}
+
+%\usecolortheme{albatross}
+\usecolortheme{beaver}
+%\usecolortheme{beetle}
+%\usecolortheme{crane}
+%\usecolortheme{dolphin}
+%\usecolortheme{dove}
+%\usecolortheme{fly}
+%\usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{rose}
+%\usecolortheme{seagull}
+%\usecolortheme{seahorse}
+%\usecolortheme{whale}
+%\usecolortheme{wolverine}
+%\setbeamertemplate{footline}
+%{
+%	\leavevmode%
+%	\hbox{%
+%		\begin{beamercolorbox}[wd=.333333\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+%			\usebeamerfont{author in head/foot}\insertshortauthor
+%		\end{beamercolorbox}%
+%		\begin{beamercolorbox}[wd=.46\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+%			\usebeamerfont{title in head/foot}\insertshorttitle
+%		\end{beamercolorbox}%
+%		\begin{beamercolorbox}[wd=.2\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+%			\usebeamerfont{date in head/foot}
+%			\insertframenumber{}% / \inserttotalframenumber
+%			\hspace*{2ex} 
+%	\end{beamercolorbox}}%
+%	\vskip0pt%
+%}
+}
+
+\usepackage{graphicx} % Allows including images
+\usepackage{booktabs} % Allows the use of \toprule, \midrule and \bottomrule in tables
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{ifthen}
+\usepackage{amssymb}
+\usepackage{amsbsy}
+\usepackage{bm}
+\usepackage{ulem}
+\usepackage{float}
+\usepackage{latexsym}
+\usepackage{comment}
+\usepackage{graphicx}
+\usepackage{amstext}
+\usepackage{latexsym}
+\usepackage{arydshln}
+\usepackage{longtable}
+\usepackage{enumerate}
+\usepackage{multirow}
+\usepackage{cases}
+\usepackage{geometry}
+\usepackage{mathtools}
+\usepackage{subeqnarray}
+\usepackage{textcomp}
+\usepackage{hyperref}
+%\usepackage{subfigure}
+\usepackage{url}
+\usepackage{threeparttable}
+\usepackage{xr}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{lscape}
+\usepackage{rotating}
+\usepackage{subcaption}
+\usepackage{epstopdf}
+\usepackage{verbatim}
+\usepackage{xcolor}
+\usepackage[sort&compress]{natbib}
+\usepackage{bm}
+
+
+\newcommand{\bA}{\mathbf{A}}
+\newcommand{\bB}{\mathbf{B}}
+\newcommand{\bD}{\mathbf{D}}
+\newcommand{\bF}{\mathbf{F}}
+\newcommand{\bI}{\mathbf{I}}
+\newcommand{\bLambda}{{\bm\Lambda}}
+\newcommand{\bOmega}{{\bm\Omega}}
+\newcommand{\bM}{\mathbf{M}}
+\newcommand{\bN}{\mathbf{N}}
+\newcommand{\bphi}{{\bm\phi}}
+\newcommand{\bpsi}{{\bm\psi}}
+\newcommand{\brho}{{\bm\rho}}
+\newcommand{\bvarphi}{{\bm\varphi}}
+\newcommand{\bW}{\mathbf{W}}
+\newcommand{\sT}{\mathrm{T}}
+\newcommand{\bZ}{\mathbf{Z}}
+\newcommand{\shalf}{\mbox{{\footnotesize$\frac{1}{2}$}}}
+\newcommand{\red}[1]{\textcolor{red}{#1}}
+
+
+\setbeamertemplate{theorems}[numbered]
+\newtheorem{prop}{Proposition}
+\let\oldframe\frame
+\renewcommand{\frame}{%
+\oldframe
+\let\olditemize\itemize
+\renewcommand\itemize{\olditemize\addtolength{\itemsep}{10pt}}%
+}
+
+
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+
+\title[Hierarchical Spatial FW Model for MET]{A Hierarchical Spatial Finlay-Wilkinson Model for Analysis of Multi-Environment Field Trials}
+
+\author[Guo, X., Dutta, S., Nettleton, D.]{Xingche Guo, Somak Dutta, Dan Nettleton}
+\institute[ISU]{Dept. of Statistics, Iowa State University}
+\date[MLCAS]{Second International Workshop on: \\ Machine Learning for Cyber-Agricultural Systems}
+
+\AtBeginSection[]{
+	\begin{frame}
+		\vfill
+		\centering
+		\begin{beamercolorbox}[sep=8pt,center,shadow=true,rounded=true]{title}
+			\usebeamerfont{title}\insertsectionhead\par%
+		\end{beamercolorbox}
+		\vfill
+	\end{frame}
+}
+
+
+
+
+
+\begin{document}
+\renewcommand{\inserttotalframenumber}{20}
+\begin{frame}
+\titlepage
+\end{frame}
+
+%\begin{frame}
+%	\frametitle{Overview}
+%	\tableofcontents
+%\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{The Genomes to Fields (G2F) Initiative \ \ \   \includegraphics[width=30mm]{g2f_logo} }
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width = 0.65\textwidth]{g2f_demo.png}
+	\end{figure}	
+	copyright:	\url{https://www.genomes2fields.org}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Multi-Environment Field Trial Analysis for G2F Data}
+We only focus on 2015 G2F dataset with:  
+\vspace{1.5em}
+\begin{itemize}
+	\item A subset of 24 \textcolor{blue}{environments} (field trials).
+	\item Yield recorded for 10,971 \textcolor{blue}{field plots} with known \textcolor{blue}{spatial locations}.
+	\item A total of 1,105 \textcolor{blue}{hybrid genotypes} (varieties).  
+	\item \textcolor{blue}{SNPs sequence} data at $\sim$1M genomic loci are available.
+	\item  Time-indexed measurements for \textcolor{blue}{weather variables} (temperature, rainfall amount, solar radiation, etc), and several \textcolor{blue}{soil variables} (pH value, soil organic matter, etc).
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}
+	\frametitle{Finlay-Wilkinson (FW) Model}
+	\begin{itemize}
+	\item Finlay-Wilkinson (FW) model \citep{finlay1963analysis}: 
+	$$y_{ijk} = \mu + g_i + h_j + b_i h_j + e_{ijk},$$
+ \item where $\mu$ is the overall mean, $g_i$ is the \textcolor{blue}{genotype} effect, $h_j$ is the \textcolor{blue}{environment} effect, $ b_i h_j$ is the FW-type multiplicative \textcolor{blue}{interaction} effect.
+	\end{itemize}		
+		\begin{figure}[H]
+		\centering
+		\includegraphics[width = 0.75\textwidth]{fw_plot_paper.pdf}
+	\end{figure}
+\end{frame}
+
+
+
+
+
+
+\begin{frame}
+	\frametitle{Residuals of FW Model for Two Fields}
+	\textcolor{red}{Problem:} the residuals are \textcolor{blue}{highly spatially correlated}.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width = 0.91\textwidth]{resid_plot_2.pdf}
+	\end{figure}
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{Hierarchical Spatial Finlay-Wilkinson (SFW) Model}
+	\begin{itemize}
+	\item Data model:
+\begin{equation*}
+[y_{ijk} | \mu, \mathbf{g}, \mathbf{b}, \mathbf{h}, \red{\bphi} ] \ \ \overset{indep}{\sim} \ \  \mathcal{N}(\mu + g_i + h_j + b_i h_j + \red{\phi_{ijk}}, \sigma_e^2),
+\end{equation*}
+
+	\item Prior distributions for genotype, slope, and field effects:
+	$$  [\mathbf{g}] \sim \mathcal{N}(\bm{0}, \bA \sigma_g^2); \ \ \ \ [\mathbf{b}] \sim \mathcal{N}(\bm{0}, \bA \sigma_b^2); $$
+        $$[\mathbf{h}|\bm{\gamma}] \sim \mathrm{N}( \gamma_1 \bZ_1 + \dots + \gamma_l \bZ_l + \dots + \gamma_L \bZ_L
+         , \mathbf{I} \sigma_h^2).$$
+         \item $\bA$ is the kinship matrix describing the correlation structure between different hybrid corn varieties \textcolor{blue}{(rrBLUP in R, Tassel 5)}.
+	\item $\bZ_{l}$ is the $l$th standardized environmental covariate.
+	\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+	\frametitle{Intrinsic Autoregression Model for Spatial Effects}
+	\begin{itemize}
+	\item A popular model for fertility adjustment in agricultural field trials is the \textcolor{blue}{first order intrinsic autoregression} \citep{besag1999bayesian,dutt:mond:2015}.
+
+\item First order Intrinsic Autoregressive prior:
+
+\begin{equation*}
+[\bpsi_j|\theta_j,\sigma^2_j] \propto |\sigma^{-2}_j\bW_j|_+^{1/2}\exp\left( -\shalf\sigma^{-2}_j\bpsi_j^\sT \bW_j\bpsi_j\right)
+\end{equation*}
+where
+\[\bpsi_j^\sT \bW_j\bpsi_j = \theta_j\sum\sum(\psi_{u,v} - \psi_{u-1,v})^2 + {\bar\theta}_j\sum\sum(\psi_{u,v} - \psi_{u,v-1})^2\]
+
+\item  The distribution of $\pmb{\psi}_j$ is \textcolor{blue}{invariant} to the addition of $c \bm{1}$.
+
+	\end{itemize}
+
+\end{frame}
+
+
+
+
+\begin{frame}
+	\frametitle{Intrinsic Autoregression Model for Spatial Effects}
+
+\textcolor{red}{Recall: } 
+\begin{itemize}
+\item $[y_{ijk} | \mu, \mathbf{g}, \mathbf{b}, \mathbf{h}, \bphi ] \ \ \overset{indep}{\sim} \ \  \mathcal{N}(\mu + g_i + h_j + b_i h_j + \phi_{ijk}, \sigma_e^2), $
+\end{itemize}
+
+\pause
+	
+\textcolor{red}{Problem: }
+\begin{itemize}
+\item The \textcolor{blue}{mean} of intrinsic spatial prior is \textcolor{blue}{not well-defined}.
+\item The overall levels of \textcolor{blue}{spatial effects} are \textcolor{blue}{confounded with} the \textcolor{blue}{environment effects}.
+\item Estimation of $\mathbf{b}$ is biased.
+\item Hierarchical structure of $\mathbf{h}$ is not applicable.
+\end{itemize}
+
+\pause
+\textcolor{red}{Solution: }
+	\begin{itemize}
+\item  \textcolor{blue}{A hard constraint}:  set the average of the spatial effects to \textcolor{blue}{zero}.
+\end{itemize}
+ 
+\end{frame}
+
+
+
+
+\begin{frame}
+	\frametitle{Projected Intrinsic Autoregression (PIAR) Prior}
+
+  	\begin{itemize}
+	\item The Gaussian \textcolor{blue}{projected intrinsic autoregression (PIAR)} prior on the $r_j \times c_j$ regular array is defined as:
+	\begin{equation*}
+\bphi_j = \bB_j \bvarphi_j,\qquad \bvarphi_j\sim{\mathcal N}(\mathbf{0},\bD_j^{-1}),
+\end{equation*}
+\item A \textcolor{blue}{sum-to-zero} constrained version of intrinsic autoregression prior.
+\item $\bD_j$ is the $(r_jc_j-1) \times (r_jc_j-1)$ diagonal matrix with its diagonal entries to be all the \textcolor{blue}{nonzero eigenvalues} of $\bW_j$.
+\item  $\bB_{j}$ is the $r_jc_j \times (r_jc_j-1)$ corresponding \textcolor{blue}{eigenvector} matrix.
+	\end{itemize}
+	
+\end{frame}
+
+
+
+
+
+
+
+
+
+\begin{frame}
+	\frametitle{Matrix Free Computation}
+	
+	\begin{itemize}
+	\item  The covariance matrix of the Gaussian PIAR is a \textcolor{blue}{dense singular matrix}.
+	\item The computation load for generating $\bphi_j$ from PIAR using knowledge of multivariate statistics is \textcolor{red}{${\mathcal O}(M_j^3/3)$}, where $M_j = r_j c_j$.
+	\item Assume \textcolor{blue}{small number of missing plots} (denote $m_j:=M_j-N_j$ as the number of missing plots, we assume $m_j \ll M_j$).
+	\item Thus matrix-vector multiplications with $\bB_j$ and $\bB^{\sT}_j$ can also be performed using these \textcolor{blue}{discrete cosine transformations (DCT)}.
+	\item The computation load of our proposed algorithm is \textcolor{red}{$\mathcal{O}( M_j + m_jM_j \log M_j +  m_j^3/3)$}.	\end{itemize}
+	
+\end{frame}
+
+
+
+
+
+\begin{frame}
+	\frametitle{Prediction}
+	
+	\begin{itemize}
+	\item Implement \textcolor{blue}{posterior predictive distributions}.
+	\item Easy to obtain predictive credible intervals.
+	\end{itemize}
+	\pause
+	\textcolor{red}{Within-field prediction}:
+	\begin{itemize}
+	\item Important to account for the spatial correlation between plots.
+	\item Kinship information plays a decisive role for an accurate prediction.
+	\item Mainly used for \textcolor{blue}{model evaluation}.
+	\end{itemize}
+	\pause
+	\textcolor{red}{Predict in new environments}:
+	\begin{itemize}
+	\item By learning how environment effects depend on the weather and soil variables.
+	\end{itemize}
+	
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{Model Evaluation via Within-Field Prediction}
+	Reduced error for yield prediction.
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width = 0.9\textwidth]{com_pred3.pdf}
+	\end{figure}
+\end{frame}
+
+
+
+
+
+\begin{frame}
+	\frametitle{Prediction Intervals}
+	50 plot yield prediction intervals ($95\%$ credible level).
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width = 0.75\textwidth]{true_vs_predint.pdf}
+	\end{figure}
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{Prediction Intervals Width}
+
+	
+	\begin{table}[H]
+	\caption*{  \textit{ the median credible interval widths of LM, FW, and SFW models at $90\%$ and $95\%$ credible levels are provided. }}
+\scalebox{0.85}{
+\begin{tabular}{ccccccc}
+\hline
+ & \multicolumn{3}{c}{  $90\%$ CL} &  \multicolumn{3}{c}{\ \ \ \ $95\%$ CL}   \\
+ &  \ \ \ LM  &  FW  &  SFW &  \ \  \ \ LM  &  FW  &  SFW  \\
+\hline
+Coverage Percentages  &  90.3\%   & 89.9\%   & 90.1\% & \ \ \ \  95.3\%  &  94.9\%   & 94.5\%     \\          
+Median Interval Widths   & 98.4 & 90.3 &  80.1  & \ \ \ \  117.3   &  107.5  & 95.76    \\ 
+\hline
+\end{tabular}
+}
+\end{table}
+	
+	\vspace{1.5em}
+	SFW model has a more \textcolor{blue}{precise interval prediction} given that SFW model has the \textcolor{blue}{shortest interval widths} at the same coverage levels.
+	
+	
+\end{frame}
+
+
+
+
+
+\begin{frame}
+	\frametitle{Predict in New Environments}
+	Location-wise RMSPEs computed using temperature and rainfall data (x-axis), versus the location-wise RMSPEs computed not using any environment information (y-axis). 
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width = 0.8\textwidth]{type3pred1.pdf}
+	\end{figure}
+	
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{Our contribution}
+	\begin{itemize}
+	\item Proposed a unified framework for high-dimensional GxE analysis by integrating genomic, environmental, and within-field spatial information.
+	\item Proposed PIAR prior and its fast computation algorithm in MCMC for multi-environment trials analysis.
+	\item Allow us to predict the yield of a (possibly novel) corn variety in a (possibly new) environment.
+	\end{itemize}
+	
+
+	
+\end{frame}
+
+
+
+
+\begin{frame}
+	\frametitle{What's next}
+
+\begin{itemize}
+\item Allow \textcolor{blue}{more complex models} (non-linear models, time series models, functional data models, etc) for environmental covariates.
+\item Formulate better \textcolor{blue}{kinship matrix} to improve estimation and further accelerate the algorithm.
+\item Extend to \textcolor{blue}{generalized} HSFW model to account for \textcolor{blue}{discrete} value responses.
+\end{itemize}
+	
+\end{frame}
+
+
+
+
+\begin{frame}
+\frametitle{Selected References}
+\bibliographystyle{apalike}
+\bibliography{FWspatial}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Acknowledgements}
+The authors acknowledge financial support of Iowa State University Plant Sciences Institute Scholars Program, the Baker Center for Bioinformatics and Biological Statistics, and the Iowa Agriculture and Home Economics Experiment Station, Ames, Iowa, Project No. IOW03617, which is supported by USDA/NIFA and State of Iowa funds. 
+
+
+Any opinions, findings, conclusions, or recommendations expressed in this publication are those of the authors and do not necessarily reflect the views of the U.S. Department of Agriculture.
+\end{frame}
+
+
+
+
+\begin{frame}%%     1
+\begin{center}
+\Huge Thank You!
+\end{center}
+\end{frame}
+
+
+
+
+\begin{frame}
+	\frametitle{Decomposition of $\bB_{j}$ and $\bD_j$}
+
+  	\begin{itemize}
+         \item Then the spectral decomposition of $\bW_j$ is given by:
+         $$( \bN_{r_j}\otimes\bN_{c_j}) \bW_j ( \bN_{r_j}^\sT \otimes\bN_{c_j}^\sT) = \theta_j\bLambda_{r_j}\otimes\mathbf{I}_{c_j} + \bar\theta_j\mathbf{I}_{r_j}\otimes\bLambda_{c_j}.$$
+         \item $\bLambda_k$ denote the $k\times k$ diagonal matrix  whose $u$th diagonal entry is $4\sin^2\{\pi(u-1)/(2k)\}.$
+	\item $\bN_k$ denotes the $k\times k$ orthogonal matrix whose $(u,v)$th entry is $1/\sqrt{k}$ if $u=1,$ $\forall v,$ and $(2/k)^{1/2}\cos\{\pi(u-1)(v-1/2)/k\}$ otherwise.
+	\item  $\bB_{j}^{\sT}$ denotes the $(r_jc_j-1)\times r_jc_j$ matrix consisting of last $r_jc_j-1$ rows of $ \bN_{r_j}\otimes\bN_{c_j}$.
+         \item $\bD_j$ denotes the diagonal matrix consisting of the nonzero elements of $\theta_j\bLambda_{r_j}\otimes\mathbf{I}_{c_j} + \bar\theta_j\mathbf{I}_{r_j}\otimes\bLambda_{c_j}$.
+	\end{itemize}
+	
+\end{frame}
+
+
+
+
+\begin{frame}
+	\frametitle{Assessing Uncertainty about FW Regression Lines}
+
+\begin{figure}[H]
+  \begin{subfigure}{0.3\textwidth}
+    \centering
+    \includegraphics[width=.9\linewidth]{fwpair_1.pdf}
+    \caption{}
+  \end{subfigure}%
+  \begin{subfigure}{0.3\textwidth}
+    \centering
+    \includegraphics[width=.9\linewidth]{fwpair_2.pdf}
+    \caption{}
+  \end{subfigure}
+  \begin{subfigure}{0.3\textwidth}\quad
+    \centering
+    \includegraphics[width=.9\linewidth]{fwpair_3.pdf}
+    \caption{}
+  \end{subfigure}
+  \medskip
+
+  \begin{subfigure}{0.3\textwidth}
+    \centering
+    \includegraphics[width=.9\linewidth]{fwpair_4.pdf}
+    \caption{}
+  \end{subfigure}
+  \begin{subfigure}{0.3\textwidth}
+    \centering
+    \includegraphics[width=.9\linewidth]{fwpair_5.pdf}
+    \caption{}
+  \end{subfigure}
+
+  \caption{Estimated Yield vs Location Effect for pairs of genotypes}
+\end{figure}
+
+
+
+
+\end{frame}
+
+
+
+\begin{frame}
+	\frametitle{Model Evaluation via Within-Field Prediction}
+Level of spatial correlation vs performance of SFW model.
+
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width = 0.8\textwidth]{morans_i.pdf}
+	\end{figure}
+\end{frame}
+
+
+
+
+
+\end{document}
+
+
+
